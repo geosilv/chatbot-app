@@ -3,7 +3,7 @@ from openai import OpenAI
 from openai import OpenAIError
 
 # Initialize the OpenAI client
-client = OpenAI(api_key="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")  # Replace with your actual API key
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 # Streamlit app
 st.title("OpenAI Chatbot")
