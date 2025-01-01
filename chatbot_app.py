@@ -1,9 +1,9 @@
 import streamlit as st
 import openai
-from openai import OpenAIError  # Correct import for handling OpenAI errors
+from openai import OpenAIError
 
 # Set up OpenAI API key
-openai.api_key = "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"  # Replace with your actual API key
+openai.api_key = "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"
 
 # Streamlit app
 st.title("OpenAI Chatbot")
@@ -25,9 +25,9 @@ if submit_button and user_input:
     try:
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",  # Or "gpt-4" if available
-            messages=st.session_state.messages,  # Pass the dynamic conversation history
+            messages=st.session_state.messages,  # Use updated 'messages' syntax
         )
-        # Extract the assistant's reply and add it to the conversation history
+        # Extract the assistant's reply
         assistant_message = response["choices"][0]["message"]["content"]
         st.session_state.messages.append({"role": "assistant", "content": assistant_message})
 
